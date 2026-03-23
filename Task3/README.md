@@ -51,6 +51,8 @@ Write a complete 64-bit AArch64 bare-metal application to blink an LED on the Ra
 6. **Build the application:**
    ```bash
    aarch64-rpi3-linux-gnu-gcc -T linker.ld -o app.elf start.s main.c -nostdlib -nostartfiles -nodefaultlibs -nolibc
+
+   aarch64-rpi3-linux-gnu-objcopy -O binary app.elf app.bin
    ```
 7. **Create a U-Boot image and copy it to the SD card**
 8. **Boot the Raspberry Pi and load the application into RAM:**
